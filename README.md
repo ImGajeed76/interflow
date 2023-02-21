@@ -286,7 +286,7 @@ const bar = new InterflowProgressBar(interflow)
     .setBarLength(50)
     .setMax(1000);
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 1000; i++) {
     bar.tick();
     await interflow.sleep(100);
 

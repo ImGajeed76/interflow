@@ -211,7 +211,7 @@ var InterflowColor = /** @class */ (function () {
     InterflowColor.hidden = function (text) {
         return "\u001B[8m".concat(text, "\u001B[0m");
     };
-    InterflowColor.strikethrough = function (text) {
+    InterflowColor.strikeThrough = function (text) {
         return "\u001B[9m".concat(text, "\u001B[0m");
     };
     InterflowColor.reset = '\x1b[0m';
@@ -505,6 +505,13 @@ var Interflow = /** @class */ (function () {
     Interflow.prototype.clear = function () {
         node_process_1.stdout.write('\x1b[2J');
         this.goto(0, 0, true);
+    };
+    Interflow.sleep = function (ms) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve) { return setTimeout(resolve, ms); })];
+            });
+        });
     };
     return Interflow;
 }());

@@ -464,7 +464,7 @@ export class Interflow {
         this.goto(0, 0, true);
     }
 
-    async sleep(ms: number) {
+    static async sleep(ms: number) {
         return  new Promise(resolve => setTimeout(resolve, ms))
     }
 }
